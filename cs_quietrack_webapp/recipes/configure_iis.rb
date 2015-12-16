@@ -34,7 +34,7 @@ end
  action [:config,:restart]
  end
 
-aws_s3_file "c:\rt.quietrack.com.pfx" do
+aws_s3_file "c:\\rt.quietrack.com.pfx" do
   bucket "#{node[:quietrack][:s3][:bucket_name]}"
   remote_path "#{node[:quietrack][:s3][:ssl_cert_path]}"
 end
