@@ -7,6 +7,8 @@
 # All rights reserved - Do Not Redistribute
 #
 
+include_recipe "aws"
+
 iis_site 'Default Web Site' do
   action [:stop, :delete]
 end
@@ -32,5 +34,8 @@ end
  action [:config,:restart]
  end
 
-
+aws_s3_file "c:\rt.quietrack.com.pfx" do
+  bucket "#{node[:quietrack][:s3][:bucket_name]}"
+  remote_path "#{node[:quietrack][:s3][:ssl_cert_path]}"
+end
 
