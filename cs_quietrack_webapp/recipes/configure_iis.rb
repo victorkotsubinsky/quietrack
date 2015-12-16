@@ -17,19 +17,20 @@ iis_pool "#{node[:iis][:appPoolName]}" do
   action :add
 end
 
-iis_site "#node[:iis][:siteName]" do
+iis_site "#{node[:iis][:siteName]}" do
 
- protocol :http
- port 80
  path "#{node[:iis][:docRoot]}"
- application_pool "#node[:iis][:appPoolName]"
+ application_pool "#{node[:iis][:appPoolName]}"
 
 action [:add,:start]
 
 end
 
 
- iis_site "#node[:iis][:siteName]" do
- bindings "#node[:iis][:siteBinds]"
+ iis_site "#{node[:iis][:siteName]}" do
+ bindings "#{node[:iis][:siteBinds]}"
  action [:config,:restart]
  end
+
+
+

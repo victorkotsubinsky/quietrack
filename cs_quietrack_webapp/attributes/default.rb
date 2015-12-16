@@ -1,5 +1,5 @@
 
-default[:iis][:docRoot]='C:\inetpub\wwwroot'
+default[:iis][:docRoot]='C:\inetpub\wwwroot\quietrack'
 default[:iis][:appPoolName]='QuieTrackPool'
 default[:iis][:siteName]='QuieTrack'
 default[:iis][:domainName]='rt.quietrack.com'
