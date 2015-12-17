@@ -44,8 +44,14 @@ windows_certificate "#{node[:iis][:pfx_path]}" do
   user_store false
 end
 
-windows_certificate_binding 'Update or set cert for IIS site' do
+windows_certificate_binding 'Unbind cert' do
+  cert_name "#{node[:iis][:cert_subject]}"
+  name_kind :subject  
+  address '0.0.0.0'
+  action :delete
+end
 
+windows_certificate_binding 'Update or set cert for IIS site' do
   cert_name "#{node[:iis][:cert_subject]}"
   name_kind :subject
   address '0.0.0.0'
