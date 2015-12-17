@@ -18,6 +18,11 @@ aws_s3_file "#{node[:quietrack][:webapp][:wwwroot]}" do
   remote_path "#{node[:quietrack][:s3][:webapp_path]}"
 end
 
+directory "#{node[:quietrack][:webapp][:wwwroot]}\\QuieTrack" do
+  recursive true
+  action :delete
+end
+
 windows_zipfile "#{node[:quietrack][:webapp][:wwwroot]}" do
   source "#{node[:quietrack][:webapp][:wwwroot]}\/QuieTrack.zip"
   action :unzip
