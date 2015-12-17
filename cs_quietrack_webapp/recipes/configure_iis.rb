@@ -45,6 +45,11 @@ windows_certificate "#{node[:iis][:pfx_path]}" do
   user_store false
 end
 
-
+windows_certificate_binding 'Update or set cert for IIS site' do
+  action :create
+  name_kind :subject
+  cert_name "#{node[:iis][:cert_subject]}"
+  address '0.0.0.0'
+end
 
 
