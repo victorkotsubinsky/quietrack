@@ -34,6 +34,15 @@ aws_s3_file "#{node[:quietrack][:webapp][:webconf_stag]}" do
   remote_path "#{node[:quietrack][:s3][:webconf_stag]}"
 end
 
+aws_s3_file "#{node[:quietrack][:webapp][:dbconn_stag]}" do
+  bucket "#{node[:quietrack][:s3][:bucket_name]}"
+  remote_path "#{node[:quietrack][:s3][:dbconn_stag]}"
+end
+
+aws_s3_file "#{node[:quietrack][:webapp][:appsettings_stag]}" do
+  bucket "#{node[:quietrack][:s3][:bucket_name]}"
+  remote_path "#{node[:quietrack][:s3][:appsettings_stag]}"
+end
 
 
 

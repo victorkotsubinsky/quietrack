@@ -16,8 +16,10 @@ default[:quietrack][:webapp][:wwwroot]='c:\inetpub\wwwroot'
 default[:quietrack][:webapp][:arch]='c:\inetpub\wwwroot\QuieTrack.zip'
 default[:quietrack][:webapp][:webconf_stag]='c:\inetpub\wwwroot\QuieTrack\web.config'
 default[:quietrack][:s3][:webconf_stag]='/QuietrackApplicationSource/web.config'
-
-
+default[:quietrack][:webapp][:dbconn_stag]='c:\inetpub\wwwroot\QuieTrack\ConnectionStrings.config'
+default[:quietrack][:s3][:dbconn_stag]='/QuietrackApplicationSource/ConnectionStrings.config'
+default[:quietrack][:webapp][:appsettings_stag]='c:\inetpub\wwwroot\QuieTrack\AppSettings.config'
+default[:quietrack][:s3][:appsettings_stag]='/QuietrackApplicationSource/AppSettings.config'
 
 
 
