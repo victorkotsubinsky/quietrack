@@ -10,7 +10,8 @@ default[:iis][:cert_subject]='it.quietrack.com'
 
 default[:quietrack][:s3][:bucket_name]='quietrack-deploy'
 default[:quietrack][:s3][:ssl_cert_path]='/QuietrackApplicationSource/rt.quietrack.com.pfx'
-
+default[:quietrack][:s3][:webapp_path]='/QuietrackApplicationSource/QuieTrack.zip'
+default[:quietrack][:webapp][:wwwroot]='c:\inetpub\wwwroot'
 
 
 
