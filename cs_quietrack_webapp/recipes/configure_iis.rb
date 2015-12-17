@@ -15,7 +15,6 @@ end
 
 iis_pool "#{node[:iis][:appPoolName]}" do
   runtime_version "4.0"
-  pipeline_mode :Classic
   action :add
 end
 
@@ -46,9 +45,9 @@ windows_certificate "#{node[:iis][:pfx_path]}" do
 end
 
 windows_certificate_binding 'Update or set cert for IIS site' do
-  action :create
-  name_kind :subject
+
   cert_name "#{node[:iis][:cert_subject]}"
+  name_kind :subject
   address '0.0.0.0'
 end
 
