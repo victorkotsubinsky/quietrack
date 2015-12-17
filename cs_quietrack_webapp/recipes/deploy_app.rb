@@ -23,13 +23,16 @@ directory "#{node[:quietrack][:webapp][:path]}" do
   action :delete
 end
 
-windows_zipfile "#{node[:quietrack][:webapp][:path]}" do
+windows_zipfile "#{node[:quietrack][:webapp][:wwwroot]}" do
   source "#{node[:quietrack][:webapp][:arch]}"
   action :unzip
 end
 
 
-
+aws_s3_file "#{node[:quietrack][:webapp][:webconf_stag]}" do
+  bucket "#{node[:quietrack][:s3][:bucket_name]}"
+  remote_path "#{node[:quietrack][:s3][:webconf_stag]}"
+end
 
 
 
