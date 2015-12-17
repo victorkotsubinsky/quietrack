@@ -34,8 +34,17 @@ end
  action [:config,:restart]
  end
 
-aws_s3_file "c:\\rt.quietrack.com.pfx" do
+aws_s3_file "#{node[:iis][:pfx_path]}" do
   bucket "#{node[:quietrack][:s3][:bucket_name]}"
   remote_path "#{node[:quietrack][:s3][:ssl_cert_path]}"
 end
+
+windows_certificate "#{node[:iis][:pfx_path]}" do
+  pfx_password decrypted['#{node[:iis][:pfx_pwd]}']
+  store_name 'MY'
+  user_store false
+end
+
+
+
 
