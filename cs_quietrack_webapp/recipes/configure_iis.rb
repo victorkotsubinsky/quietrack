@@ -39,7 +39,7 @@ aws_s3_file "#{node[:iis][:pfx_path]}" do
 end
 
 windows_certificate "#{node[:iis][:pfx_path]}" do
-  pfx_password "#{node[:iis][:pfx_pwd]}"
+  pfx_password ""
   store_name 'MY'
   user_store false
 end
