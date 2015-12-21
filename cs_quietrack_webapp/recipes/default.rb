@@ -19,7 +19,7 @@ chef.encrypted_data_bag_secret_key_path="#{node[:quietrack][:webapp][:key]}"
 end
  
 passwords = Chef::EncryptedDataBagItem.load("prod", "passwords")
-mysql = passwords["cert"]
-Chef::Log.info("The mysql password is: '#{cert}'")
+pfx_pw = passwords["cert"]
+Chef::Log.info("The pfx password is: '#{pfx_pw}'")
 
 
