@@ -7,13 +7,8 @@
 # All rights reserved - Do Not Redistribute
 #
 
-
-node[:deploy].each do |application, deploy|
-  deploy[:environment_variables].each do |key, value|
-    Chef::Log.info("Setting ENV[#{key}] to #{value}")
-    ENV[key] = value
-  end
-end
-
+passwords = Chef::EncryptedDataBagItem.load("prod", "passwords")
+mysql = passwords["cert"]
+Chef::Log.info("The mysql password is: '#{cert}'")
 
 
