@@ -8,6 +8,13 @@
 #
 
 
-Chef::Log.info("USER_ID: #{node[:deploy]['web_app'][:environment_variables][:pfx_key]}")
+
+#Chef::Log.info("USER_ID: #{node[:key]}")
+
+#app = search(:aws_opsworks_app,"shortname:web_app").first
+#Chef::Log.info("********** The app's short name is #{app['environment']['pfx_key']} **********")
+
+
+
 
 
