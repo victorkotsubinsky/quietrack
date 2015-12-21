@@ -21,6 +21,8 @@ default[:quietrack][:s3][:dbconn_stag]='/QuietrackApplicationSource/ConnectionSt
 default[:quietrack][:webapp][:appsettings_stag]='c:\inetpub\wwwroot\QuieTrack\AppSettings.config'
 default[:quietrack][:s3][:appsettings_stag]='/QuietrackApplicationSource/AppSettings.config'
 
+default[:quietrack][:webapp][:key]='c:\inetpub\wwwroot\secret_key_datbag.pem'
+default[:quietrack][:s3][:secret_databag]='/Keys/secret_key_datbag.pem'
 
 
 
