@@ -38,6 +38,13 @@ aws_s3_file "#{node[:iis][:pfx_path]}" do
   remote_path "#{node[:quietrack][:s3][:ssl_cert_path]}"
 end
 
+
+
+windows_certificate "#{node[:iis][:cert_subject]}" do
+    action :delete
+end
+
+
 app = search(:aws_opsworks_app,"shortname:web_app").first
 
 windows_certificate "#{node[:iis][:pfx_path]}" do
