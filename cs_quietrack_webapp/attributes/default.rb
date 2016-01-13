@@ -3,7 +3,7 @@ default[:iis][:docRoot]='C:\inetpub\wwwroot\quietrack'
 default[:iis][:appPoolName]='QuieTrackPool'
 default[:iis][:siteName]='QuieTrack'
 default[:iis][:domainName]='rt.quietrack.com'
-default[:iis][:siteBinds]='http/*:80:*,https/*:443:*'
+default[:iis][:siteBinds]='http/*:80:rt.quietrack.com,https/*:443:rt.quietrack.com'
 default[:iis][:pfx_path]='c:\rt.quietrack.com.pfx'
 default[:iis][:cert_subject]='it.quietrack.com'
 
